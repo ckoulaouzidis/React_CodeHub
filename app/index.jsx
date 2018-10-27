@@ -1,24 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
-import BoxTile from /components/BoxTile;
-import HeroTile from /components/HeroTile;
+import BrowserRouter from "./containers/BrowserRouter"; 
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-
-
-const MasterDiv=(props)=>{
-  return(
-      <>
-        <HeroTile/>
-        <BoxTile/> 
-      </>
-  );
-}
 
 
 
 
 ReactDOM.render(
-  <MasterDiv/>,
+  <Router>
+    <BrowserRouter/>
+  </Router>,
   document.getElementById("app")
 );
