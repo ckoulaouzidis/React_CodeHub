@@ -6,9 +6,6 @@ import MainJumbotron from "../components/MainJumbotron";
 import BadgePanel from "../components/BadgePanel";
 
 class DashBoard extends React.Component {
-    constructor() {
-      super();
-    }
 
 
 
