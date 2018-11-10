@@ -1,38 +1,46 @@
 import React from 'react';
-import { Navbar, NavItem,Nav,NavDropdown,MenuItem } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import { Navbar, NavItem, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
 
 
 class Header extends React.Component {
-    constructor() {
-      super();
-     
-    }
-   
-    render() {
-      return (
-        <Navbar>
+  constructor() {
+    super();
+  }
+
+  render() {
+    return (
+      <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            Code.Hub
+            <Link to="/" className="navbar-item brand-text">CodeHub DashBoard</Link>
           </Navbar.Brand>
         </Navbar.Header>
         <Navbar.Collapse>
-        <Nav>
-          <NavItem eventKey={1} href="#">
-            DashBoard
-          </NavItem>
-          <NavItem eventKey={2} href="#">
-            Courses
-          </NavItem>
-          <NavItem eventKey={2} href="#">
-            Add Course
-          </NavItem>
-         
-        </Nav>
+          <Nav>
+            <NavItem
+              componentClass={Link}
+              to="/courses"
+              href="/courses"
+              active={location.pathname === "/courses"}
+            >
+              Courses
+        </NavItem>
+            <Nav pullRight>
+              <NavItem
+                componentClass={Link}
+                to="/add-course"
+                href="/add-course"
+                active={location.pathname === "/add-course"}
+              >
+                Add new course
+            </NavItem>
+            </Nav>
+          </Nav>
         </Navbar.Collapse>
       </Navbar>
-      );
-    }
-   }
-   
-   export default Header;
+    );
+  }
+}
+
+export default Header;

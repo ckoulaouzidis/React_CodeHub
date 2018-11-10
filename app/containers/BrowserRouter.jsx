@@ -2,23 +2,17 @@ import React from "react";
 import NoMatch from "./NoMatch"
 import DashBoard from "./DashBoard"
 import Courses from "./Courses"
+import Course from "./Course"
 import AddCourse from "./AddCourse"
-
-import ReactDOM from "react-dom";
-import { Route,Switch, Link } from "react-router-dom";
-
+import { Route,Switch} from "react-router-dom";
 
 const BrowserRouter = () => (
-    
-       <Switch>
-            <Route exact path="/" component={DashBoard } />
-            <Route path="/about" component={Courses} />
-            <Route path="/company" component={AddCourse} />
-            <Route component={NoMatch}/>
-        </Switch>
-   
- 
+    <Switch>
+        <Route exact path="/" component={DashBoard } />
+        <Route exact path="/Courses" component={Courses} />
+        <Route exact path="/course/:id" component={Course} />
+        <Route path="/add-course" component={AddCourse} />
+        <Route component={NoMatch}/>
+    </Switch>
 );
-   
-   
 export default BrowserRouter;

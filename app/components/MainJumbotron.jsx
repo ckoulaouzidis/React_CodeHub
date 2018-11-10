@@ -4,18 +4,15 @@ import { Jumbotron } from 'react-bootstrap';
 class MainJumbotron extends React.Component {
     constructor() {
       super();
-     
     }
-   
-    render() {
-        return <Jumbotron>
-                <h3>Welcome to Code.Hub Dashboard</h3>
-                    <p>
-                    Manage everything and have fun!
-                    </p>
-         
+
+render() {
+    return (
+            <Jumbotron>
+                <h2>Welcome to Code.Hub Dashboard!</h2>
+                <p>Manage everything and have fun!</p>
             </Jumbotron>
-        }
-   }
-   
-   export default MainJumbotron;
+        );
+    }
+}
+export default MainJumbotron;
